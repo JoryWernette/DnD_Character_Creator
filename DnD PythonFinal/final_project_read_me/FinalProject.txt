@@ -1,0 +1,83 @@
+
+Statement of work:
+My program is intended to assist in creating a 1st level character in 5th edition Dungeons and Dragons. The user can view saved characters, open up the dnd handbook, roll dice, and quit the program.
+The program will do most of the work for the User, who needs only to input a name, the name of the race, and the name of the class they'd like. Before deciding on a race or class, the program will roll ability scores for the character. The user can then choose the race and class that would fit their character. As they do this, they can be directed to the dnd beyond website specifically at the section where there may be some confusion, like if the user wanted to read up on what races are or what a specific races' benefits are.
+Once everything has been decided, the program will save the character's information to a csv file. It will also store the character's name in a catalogue text file so that I can list what characters there are stored.
+Back at the main menu, the user can select to view a character. This prompts the program to list names in the character catalogue and wait for the user to enter a name to open, which it then will display their information in the shell.
+Other than quitting, the program can also direct the user to the player's handbook pdf and act as digital dice.
+
+
+
+
+
+### For some reason the program only wants to work correctly if the dice module is the one that is ran instead of mainmenu. Hope to fix before turning in.
+### it still begins at the main menu for whatever reason
+### attempted to rename dice as main and mainMenu as simply menu, but things began to break so reverted to old save
+
+
+
+
+User Stories:
+As a player character, I need to create characters will unique stats in order to participate in multiple stories.
+
+As a dungeon master, I need to create multiple non-player characters in order to flush out the world I am building for my players.
+
+As a player in a current adventure, I need easy access to my character's information in order to decide how to deal with certain situations that come up along the way.
+
+As both a player and a dungeon master, I need to have easy access to the player handbook in order to solve any disputes over what certain items and spells do exactly, per the rules.
+
+As a player or a dungeon master, I need to be able to have some sort of dice, whether its the physical form or if its using this program.
+
+MainMenu
+	Opens the loop for the program's options
+	Execute the chosen path
+
+Dice Roll
+	uses the random module to get a random number 1-6 4 times to replace rolling 4 6 sided dice
+	the lowest of the 4 gets dropped and the remaining 3 are added together
+	this gets us a total for the ability score
+
+Character Scores
+	describes process of getting ability scores
+	invokes the dice roll function 6 times to get each ability score 
+	if roll is less than 10, then gives user the option to re-roll
+	there is a check to ensure user can only use the re-roll once
+	display the ability scores 
+	execute next part of the process, character race
+
+Character Race
+	lists races and gives an option to direct the user to the dnd beyond website to get more info on races or select race
+	enters a loop to keep this part open in case user does need to be directed to the dnd website or misspell something
+	describes and implements the race bonus into the appropriate score
+	execute the next function, character class
+
+Character Class
+	lists classes with a similar option to redirect to the dnd website for information on classes and specific classes
+	Enter loop to keep this section open if the user uses the link to the website or misspells something
+	executes the save part of the program
+
+Save
+	Saves character information to csv
+	also saves the character's name to a text file to make a catalogue of which characters have been made
+	back to the main menu
+
+View
+	lists the names from the character catalogue
+	User enters the name of the character they'd like to view
+	Reads the information into the terminal
+	back to main
+
+Open Handbook
+	This opens a new tab to the player's handbook pdf
+	back to main
+
+Replacement Dice
+	Asks the user what type of die they'd like to roll d100, d20, d12... and then uses randint to get a random number 0 to the type of die they used. This is a one 	time roller, so the results are not recorded except for in the shell. The purpose of this is if a player or DM forgot their dice, they could use this function 	instead.
+
+Quit
+	Quit
+
+
+
+Looking forward:
+	I would like to add the option to selecting a background for the character and a section to write a description for them. This is supposed to do away with the 	tedious parts of making a character and expedite it.I also considered creating a bit where if you view a character, it would pull open a standard web page for 	them that has links to the character's class and race. Those factors could change the background and font of the page. Example: a barbarian would have a more 	earthy background and rougher font, but an elf might have a bright white or yellow background and a scripty font. A cool GUI would be fun to make as well. I 	intend to work more on this project moving forward.
